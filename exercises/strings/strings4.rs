@@ -2,7 +2,7 @@
  * @Author: yaoxingpu yaoxpu@163.com
  * @Date: 2024-03-11 11:52:39
  * @LastEditors: yaoxingpu yaoxpu@163.com
- * @LastEditTime: 2024-03-11 20:35:06
+ * @LastEditTime: 2024-03-11 20:36:08
  * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/strings/strings4.rs
  * @Description:
  *
@@ -16,7 +16,7 @@
 //
 // No hints this time!
 
-// I AM NOT DONE
+
 
 fn string_slice(arg: &str) {
     println!("{}", arg);

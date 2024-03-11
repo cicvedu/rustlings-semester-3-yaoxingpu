@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-11 20:44:45
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/modules/modules3.rs
+ * @Description:
+ *
+ */
 // modules3.rs
 //
 // You can use the 'use' keyword to bring module paths from modules from
@@ -8,10 +17,9 @@
 // Execute `rustlings hint modules3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 // TODO: Complete this use statement
-use ???
+use std::time::{SystemTime, UNIX_EPOCH};
 
 fn main() {
     match SystemTime::now().duration_since(UNIX_EPOCH) {
