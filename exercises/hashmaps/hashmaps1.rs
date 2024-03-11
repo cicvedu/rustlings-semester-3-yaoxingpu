@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-11 20:50:12
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/hashmaps/hashmaps1.rs
+ * @Description:
+ *
+ */
 // hashmaps1.rs
 //
 // A basket of fruits in the form of a hash map needs to be defined. The key
@@ -11,17 +20,18 @@
 // Execute `rustlings hint hashmaps1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 use std::collections::HashMap;
 
 fn fruit_basket() -> HashMap<String, u32> {
-    let mut basket = // TODO: declare your hash map here.
+    let mut basket = HashMap::new(); // TODO: declare your hash map here.
 
     // Two bananas are already given for you :)
     basket.insert(String::from("banana"), 2);
 
     // TODO: Put more fruits in your basket here.
+    basket.insert(String::from("apple"), 3);
+    basket.insert(String::from("mango"), 1);
 
     basket
 }
