@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-11 20:25:03
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/enums/enums3.rs
+ * @Description:
+ *
+ */
 // enums3.rs
 //
 // Address all the TODOs to make the tests pass!
@@ -5,10 +14,13 @@
 // Execute `rustlings hint enums3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 enum Message {
     // TODO: implement the message variant types based on their usage below
+    ChangeColor(u8, u8, u8),
+    Echo(String),
+    Move(Point),
+    Quit,
 }
 
 struct Point {
@@ -43,6 +55,12 @@ impl State {
         // variants
         // Remember: When passing a tuple as a function argument, you'll need
         // extra parentheses: fn function((t, u, p, l, e))
+        match message {
+            Message::ChangeColor(r, g, b) => self.change_color((r, g, b)),
+            Message::Quit => self.quit(),
+            Message::Echo(s) => self.echo(s),
+            Message::Move(p) => self.move_position(p),
+        }
     }
 }
 

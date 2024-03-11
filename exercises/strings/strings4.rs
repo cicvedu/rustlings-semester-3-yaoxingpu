@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-11 20:35:06
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/strings/strings4.rs
+ * @Description:
+ *
+ */
 // strings4.rs
 //
 // Ok, here are a bunch of values-- some are `String`s, some are `&str`s. Your
@@ -17,14 +26,16 @@ fn string(arg: String) {
 }
 
 fn main() {
-    ???("blue");
-    ???("red".to_string());
-    ???(String::from("hi"));
-    ???("rust is fun!".to_owned());
-    ???("nice weather".into());
-    ???(format!("Interpolation {}", "Station"));
-    ???(&String::from("abc")[0..1]);
-    ???("  hello there ".trim());
-    ???("Happy Monday!".to_string().replace("Mon", "Tues"));
-    ???("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string_slice("blue");
+    string("red".to_string());
+    string(String::from("hi"));
+    // to_owned() 方法用于将字符串的引用转换为字符串
+    string("rust is fun!".to_owned());
+    // into() 方法用于将字符串的引用转换为字符串
+    string("nice weather".into());
+    string(format!("Interpolation {}", "Station"));
+    string_slice(&String::from("abc")[0..1]);
+    string_slice("  hello there ".trim());
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
