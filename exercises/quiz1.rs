@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-11 17:00:40
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/quiz1.rs
+ * @Description:
+ *
+ */
 // quiz1.rs
 //
 // This is a quiz for the following sections:
@@ -13,10 +22,16 @@
 //
 // No hints this time ;)
 
-// I AM NOT DONE
 
 // Put your function here!
-// fn calculate_price_of_apples {
+fn calculate_price_of_apples(num: i32) -> i32 {
+    if num > 40 {
+        num
+    } else {
+        num * 2
+    }
+
+}
 
 // Don't modify this function!
 #[test]
