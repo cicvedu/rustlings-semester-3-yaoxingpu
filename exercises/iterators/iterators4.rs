@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-12 11:36:33
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/iterators/iterators4.rs
+ * @Description:
+ *
+ */
 // iterators4.rs
 //
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
@@ -15,6 +24,7 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+    (1..=num).fold(1, |acc, x| acc * x)
 }
 
 #[cfg(test)]
