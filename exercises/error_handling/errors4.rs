@@ -1,9 +1,18 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-12 08:59:19
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/error_handling/errors4.rs
+ * @Description:
+ *
+ */
 // errors4.rs
 //
 // Execute `rustlings hint errors4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 #[derive(PartialEq, Debug)]
 struct PositiveNonzeroInteger(u64);
@@ -17,7 +26,13 @@ enum CreationError {
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
         // Hmm...? Why is this only returning an Ok value?
-        Ok(PositiveNonzeroInteger(value as u64))
+        if value > 0 {
+            Ok(PositiveNonzeroInteger(value as u64))
+        } else if value == 0 {
+            Err(CreationError::Zero)
+        } else {
+            Err(CreationError::Negative)
+        }
     }
 }
 

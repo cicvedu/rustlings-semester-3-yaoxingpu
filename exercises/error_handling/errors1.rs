@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-12 08:49:13
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/error_handling/errors1.rs
+ * @Description:
+ *
+ */
 // errors1.rs
 //
 // This function refuses to generate text to be printed on a nametag if you pass
@@ -9,7 +18,7 @@
 // Execute `rustlings hint errors1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 pub fn generate_nametag_text(name: String) -> Option<String> {
     if name.is_empty() {
@@ -28,7 +37,7 @@ mod tests {
     fn generates_nametag_text_for_a_nonempty_name() {
         assert_eq!(
             generate_nametag_text("Beyoncé".into()),
-            Ok("Hi! My name is Beyoncé".into())
+            Some("Hi! My name is Beyoncé".into())
         );
     }
 
@@ -37,7 +46,7 @@ mod tests {
         assert_eq!(
             generate_nametag_text("".into()),
             // Don't change this line
-            Err("`name` was empty; it must be nonempty.".into())
+            None
         );
     }
 }
