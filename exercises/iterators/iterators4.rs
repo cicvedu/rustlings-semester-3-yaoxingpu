@@ -2,7 +2,7 @@
  * @Author: yaoxingpu yaoxpu@163.com
  * @Date: 2024-03-11 11:52:39
  * @LastEditors: yaoxingpu yaoxpu@163.com
- * @LastEditTime: 2024-03-12 11:36:33
+ * @LastEditTime: 2024-03-12 11:39:41
  * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/iterators/iterators4.rs
  * @Description:
  *
@@ -12,7 +12,6 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
