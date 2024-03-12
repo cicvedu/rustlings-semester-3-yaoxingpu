@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-12 10:36:00
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/lifetimes/lifetimes1.rs
+ * @Description:
+ *
+ */
 // lifetimes1.rs
 //
 // The Rust compiler needs to know how to check whether supplied references are
@@ -8,9 +17,8 @@
 // Execute `rustlings hint lifetimes1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
-fn longest(x: &str, y: &str) -> &str {
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
     } else {
