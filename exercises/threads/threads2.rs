@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-12 14:49:21
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/threads/threads2.rs
+ * @Description:
+ *
+ */
 // threads2.rs
 //
 // Building on the last exercise, we want all of the threads to complete their
@@ -7,9 +16,9 @@
 // Execute `rustlings hint threads2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
-use std::sync::Arc;
+
+use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
 
@@ -18,13 +27,14 @@ struct JobStatus {
 }
 
 fn main() {
-    let status = Arc::new(JobStatus { jobs_completed: 0 });
+    let status = Arc::new(Mutex::new(JobStatus { jobs_completed: 0 }));
     let mut handles = vec![];
     for _ in 0..10 {
         let status_shared = Arc::clone(&status);
         let handle = thread::spawn(move || {
             thread::sleep(Duration::from_millis(250));
             // TODO: You must take an action before you update a shared value
+            let mut status_shared = status_shared.lock().unwrap();
             status_shared.jobs_completed += 1;
         });
         handles.push(handle);
@@ -34,6 +44,6 @@ fn main() {
         // TODO: Print the value of the JobStatus.jobs_completed. Did you notice
         // anything interesting in the output? Do you have to 'join' on all the
         // handles?
-        println!("jobs completed {}", ???);
+        println!("jobs completed {}", status.lock().unwrap().jobs_completed);
     }
 }

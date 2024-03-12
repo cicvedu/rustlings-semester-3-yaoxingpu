@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-12 15:45:29
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/tests/tests5.rs
+ * @Description:
+ *
+ */
 // tests5.rs
 //
 // An `unsafe` in Rust serves as a contract.
@@ -22,7 +31,7 @@
 // Execute `rustlings hint tests5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 /// # Safety
 ///
@@ -32,7 +41,8 @@ unsafe fn modify_by_address(address: usize) {
     // code's behavior and the contract of this function. You may use the
     // comment of the test below as your format reference.
     unsafe {
-        todo!("Your code goes here")
+        let ptr = address as *mut u32;
+        *ptr = 0xAABBCCDD;
     }
 }
 

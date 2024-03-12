@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-12 15:47:07
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/tests/tests6.rs
+ * @Description:
+ *
+ */
 // tests6.rs
 //
 // In this example we take a shallow dive into the Rust standard library's
@@ -7,7 +16,7 @@
 // Execute `rustlings hint tests6` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 struct Foo {
     a: u128,
@@ -20,8 +29,9 @@ struct Foo {
 unsafe fn raw_pointer_to_box(ptr: *mut Foo) -> Box<Foo> {
     // SAFETY: The `ptr` contains an owned box of `Foo` by contract. We
     // simply reconstruct the box from that pointer.
-    let mut ret: Box<Foo> = unsafe { ??? };
-    todo!("The rest of the code goes here")
+    let mut ret: Box<Foo> = unsafe { Box::from_raw(ptr) };
+    ret.b = Some("hello".to_owned());
+    ret
 }
 
 #[cfg(test)]

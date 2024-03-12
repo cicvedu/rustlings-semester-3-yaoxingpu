@@ -1,3 +1,12 @@
+/*
+ * @Author: yaoxingpu yaoxpu@163.com
+ * @Date: 2024-03-11 11:52:39
+ * @LastEditors: yaoxingpu yaoxpu@163.com
+ * @LastEditTime: 2024-03-12 14:42:09
+ * @FilePath: /rustlings-semester-3-yaoxingpu/exercises/threads/threads1.rs
+ * @Description:
+ *
+ */
 // threads1.rs
 //
 // This program spawns multiple threads that each run for at least 250ms, and
@@ -8,7 +17,7 @@
 // Execute `rustlings hint threads1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 use std::thread;
 use std::time::{Duration, Instant};
@@ -27,6 +36,7 @@ fn main() {
     let mut results: Vec<u128> = vec![];
     for handle in handles {
         // TODO: a struct is returned from thread::spawn, can you use it?
+        results.push(handle.join().unwrap());
     }
 
     if results.len() != 10 {
